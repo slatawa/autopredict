@@ -6,7 +6,6 @@
 
 """
 
-from train import (train)
 import os
 
 here = os.path.abspath(os.path.dirname(__file__))
@@ -22,7 +21,7 @@ try:
 except:
     __version__ = "0.0.local"
 
-__all__ = ("train")
+__all__ = ()
 
 
 

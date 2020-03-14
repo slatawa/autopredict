@@ -1,0 +1,13 @@
+0.0.2
+1) Auto regression models
+2) feature importance 
+0.03
+3) for normal fit process add cross validation and average teh score over the cv sets
+4) add more validations on inputs
+5) improive logging 
+
+0.04
+1) add catboost,lgb,xgboost as a seperate functionality , this should run seperate from the normal sklearn models
+
+
+
