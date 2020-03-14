@@ -1,12 +1,17 @@
-0.0.2
-1) Auto regression models
-2) feature importance 
-0.03
+1.0.1
+1) add more classification models
+2) Auto regression models
+3) feature importance 
+4) add scaling  --done 
+5) improve readme file -- done
+6) have some handling for nulls
+
+1.0.2
 3) for normal fit process add cross validation and average teh score over the cv sets
 4) add more validations on inputs
 5) improive logging 
 
-0.04
+1.0.3
 1) add catboost,lgb,xgboost as a seperate functionality , this should run seperate from the normal sklearn models
 
 

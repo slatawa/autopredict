@@ -1,3 +1,5 @@
+import numpy as np
+
 def reduce_memory(df):
     """
     This method can be used to reduce memory usage of a dataframe by compacting int/float columns

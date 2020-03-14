@@ -9,6 +9,8 @@ from sklearn.model_selection import GridSearchCV
 from sklearn.metrics import roc_auc_score
 from sklearn.metrics import f1_score
 from grid._base import gridDict
+from sklearn.preprocessing import MinMaxScaler
+from sklearn.preprocessing import StandardScaler
 
 
 
@@ -43,7 +45,7 @@ class autoClassify:
         :param scaler:     this would decide the scaling strategy,some of prediction models
                            perform better with scaled features while few others like trees can handle
                            unscaled values,default value for this is None, supported values- 'minmax'
-                           for sklearn's minmax sclare ,'standard' - for sklearn's standard scaler
+                           for sklearn's minmax sclaer ,'standard' - for sklearn's standard scaler
         :param use_grid_tuning: set this to True if you want to use grid search over the
                                supported classifier, the grid is selected based on configuration
                                saved in ./grid/_bases.py file in Dictionary gridDict
@@ -64,6 +66,7 @@ class autoClassify:
 
         self._predict_df = pd.DataFrame(columns=['modelName','modelObject','modelParams'])
         self._encode_dict = {'label':LabelEncoder(),'hot':OneHotEncoder()}
+        self._scaler_dict = {'standard':StandardScaler(),'minmax':MinMaxScaler()}
         self.encoder=encoder
         self.scaler=scaler
         self.score = score
@@ -71,11 +74,16 @@ class autoClassify:
 
     ## add checks here
 
+    def _scaleData(self,X,scaleObj):
+        for rec in X.columns:
+            if str(X[rec].dtype).startswith('int') or str(X[rec].dtype).startswith('float'):
+                X[rec] = scaleObj.fit_transform(X[rec].to_numpy().reshape(-1,1))
+        return X
+
 
     def _encodeData(self,X,encodeObj):
         for rec in X.columns:
             if X[rec].dtype == 'object':
-                print(rec)
                 X[rec] = encodeObj.fit_transform(X[rec])
         return X
 
@@ -96,9 +104,19 @@ class autoClassify:
                                                   'modelParams':model.get_params()},
                                                   ignore_index=True)
 
+    def getModelMetadata(self):
+        return self.models
+
     def train(self,X,y):
+
+        if self.scaler:
+            if self.scaler not in self._scaler_dict.keys():
+                raise ValueError(f'Scaler key not defined, look at the scaler parameter '
+                                 f'that is being passed in {self.scaler}')
+            X = self._scaleData(X,self._scaler_dict[self.scaler])
+
         ## check if any data to be converted from str/object
-        X= self._encodeData(X,self._encode_dict[self.encoder])
+        X = self._encodeData(X, self._encode_dict[self.encoder])
 
         if self.use_grid_tuning:
             for rec in self.models:

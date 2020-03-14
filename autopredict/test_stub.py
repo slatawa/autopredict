@@ -39,7 +39,10 @@ if __name__ == '__main__':
 
     X['state'].fillna('MI',inplace=True)
 
-    tmp =autoClassify(encoder='label',use_grid_tuning=True)
+
+
+
+    tmp =autoClassify(encoder='label')
     tmp.train(X,y)
     print(tmp._predict_df)
     #print(_)
