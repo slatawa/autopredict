@@ -1,2 +1,2 @@
 # autopredict
-Python Library to automate building of prediciton models,feature selection
+Python Library to Automate building of prediciton models and feature selection
