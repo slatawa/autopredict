@@ -1,0 +1,9 @@
+README.md
+setup.py
+autopredict/__init__.py
+autopredict/train.py
+autopredict.egg-info/PKG-INFO
+autopredict.egg-info/SOURCES.txt
+autopredict.egg-info/dependency_links.txt
+autopredict.egg-info/requires.txt
+autopredict.egg-info/top_level.txt

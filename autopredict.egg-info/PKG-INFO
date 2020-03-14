@@ -1,0 +1,21 @@
+Metadata-Version: 1.2
+Name: autopredict
+Version: 0.0.1
+Summary: autopredict is a package to automate Machine learning model selection tasks
+Home-page: https://github.com/slatawa/autopredict.git
+Author: Sanchit Latawa
+Author-email: slatawa@yahoo.in
+License: MIT
+Description: # autopredict
+        Python Library to Automate building of prediction models and feature selection
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Intended Audience :: Developers
+Requires-Python: >=3.5
