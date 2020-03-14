@@ -17,9 +17,9 @@ setuptools.setup(
 
     license="MIT",
 
-    description='autopredict is a package to automate Machine learning model selection tasks',
+    description='Autopredict is a package to automate Machine learning model selection/ feature selection tasks',
 
-    version='v0.0.1',
+    version='v0.0.2',
 
     long_description=README,
 
@@ -29,7 +29,7 @@ setuptools.setup(
 
     python_requires=">=3.5",
 
-    install_requires=['requests'],
+    install_requires=['requests','pandas','numpy','sklearn'],
 
     classifiers=[
 
