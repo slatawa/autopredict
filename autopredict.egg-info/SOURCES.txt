@@ -8,6 +8,7 @@ autopredict.egg-info/dependency_links.txt
 autopredict.egg-info/requires.txt
 autopredict.egg-info/top_level.txt
 autopredict/classification/__init__.py
+autopredict/classification/_base.py
 autopredict/classification/autoClassify.py
 autopredict/datasets/__init__.py
 autopredict/datasets/_base.py
