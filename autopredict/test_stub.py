@@ -1,5 +1,5 @@
 import pandas as pd
-from classification import autoClassify
+from autoclassification import autoClassify
 from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import GridSearchCV
 from sklearn.linear_model import LogisticRegression
