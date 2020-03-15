@@ -1,11 +1,13 @@
 import pandas as pd
-from autoclassification import autoClassify
+from classification import autoClassify
 from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import GridSearchCV
 from sklearn.linear_model import LogisticRegression
 from datasets import loadiris
 #from sklearn.model_selection import GridSearchCV
 from sklearn.tree import DecisionTreeClassifier
+import grid
+import time
 
 if __name__ == '__main__':
     pd.set_option('display.max_columns',50000)
@@ -25,6 +27,7 @@ if __name__ == '__main__':
                                   labels=[0,1,2,3,4,5,6,7,8,9,10])
 
     df_train = df_train[df_train['compliance'].notnull()]
+    #print(df_train.isna().any().sum())
     cols = ['agency_name', 'discount', 'state', 'disposition', 'total_bin', 'compliance']
     df_train = df_train[cols]
     #print(df_train.isna().any())
@@ -39,13 +42,13 @@ if __name__ == '__main__':
 
     X['state'].fillna('MI',inplace=True)
 
-
-
-
-    tmp =autoClassify(encoder='label')
+    #print(grid.getClassificationGridDict())
+    start = time.time()
+    tmp =autoClassify(encoder='label',useGridtuning=True)
+    #tmp = autoClassify(encoder='label', useGridtuning=False)
     tmp.train(X,y)
     print(tmp._predict_df)
-    #print(_)
+    print(time.time()-start)
     #print(type(_.iloc[0,1]))
     #temp = _.iloc[0,1]
     #print(temp)

@@ -10,12 +10,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="test_stub.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test_stub.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="236">
-              <caret line="61" column="8" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="32" />
+            <state relative-caret-position="160">
+              <caret line="47" column="5" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -26,8 +26,8 @@
       <file leaf-file-name="_search.py" pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/Desktop/Box/ref_data/ref_data/credit/python37/uom_data_spec/Lib/site-packages/sklearn/model_selection/_search.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="1136" column="50" selection-start-line="1136" selection-start-column="50" selection-end-line="1136" selection-end-column="50" />
+            <state relative-caret-position="4058">
+              <caret line="885" column="22" selection-start-line="885" selection-start-column="18" selection-end-line="885" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -35,8 +35,8 @@
       <file leaf-file-name="autoClassify.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/classification/autoClassify.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="28" column="33" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="33" />
+            <state relative-caret-position="141">
+              <caret line="143" selection-start-line="143" selection-end-line="143" />
               <folding>
                 <element signature="e#26#45#0" expanded="true" />
               </folding>
@@ -44,29 +44,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Desktop/Box/ref_data/ref_data/credit/python37/uom_data_spec/Lib/site-packages/sklearn/base.py">
+      <file leaf-file-name="_base.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/classification/_base.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="642">
-              <caret line="569" column="46" selection-start-line="569" selection-start-column="25" selection-end-line="569" selection-end-column="46" />
+            <state relative-caret-position="187">
+              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+              <folding>
+                <element signature="e#0#47#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_data.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Desktop/Box/ref_data/ref_data/credit/python37/uom_data_spec/Lib/site-packages/sklearn/preprocessing/_data.py">
+      <file leaf-file-name="_gb.py" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Desktop/Box/ref_data/ref_data/credit/python37/uom_data_spec/Lib/site-packages/sklearn/ensemble/_gb.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-1738">
-              <caret line="519" column="6" selection-start-line="519" selection-start-column="6" selection-end-line="519" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="setup.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/../setup.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="21" column="15" selection-start-line="21" selection-start-column="15" selection-end-line="21" selection-end-column="15" />
+              <caret line="2066" column="26" selection-start-line="2066" selection-start-column="17" selection-end-line="2066" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -74,35 +68,29 @@
       <file leaf-file-name="_base.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grid/_base.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="47" selection-start-line="1" selection-start-column="47" selection-end-line="1" selection-end-column="47" />
+            <state relative-caret-position="68">
+              <caret line="4" column="14" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_classes.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Desktop/Box/ref_data/ref_data/credit/python37/uom_data_spec/Lib/site-packages/sklearn/tree/_classes.py">
+      <file leaf-file-name="_base.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/datasets/_base.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="158">
-              <caret line="600" column="13" selection-start-line="600" selection-start-column="4" selection-end-line="600" selection-end-column="13" />
+            <state relative-caret-position="85">
+              <caret line="5" column="34" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
+              <folding>
+                <element signature="e#0#19#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="feature_utils.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/features/feature_utils.py">
+      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/datasets/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="18" lean-forward="true" selection-start-column="18" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_logistic.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Desktop/Box/ref_data/ref_data/credit/python37/uom_data_spec/Lib/site-packages/sklearn/linear_model/_logistic.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="131">
-              <caret line="1436" column="60" selection-start-line="1436" selection-start-column="59" selection-end-line="1436" selection-end-column="60" />
+            <state relative-caret-position="34">
+              <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -140,6 +128,8 @@
       <find>isna</find>
       <find>_encode_dict</find>
       <find>autoClassify</find>
+      <find>jobs</find>
+      <find>criterion</find>
     </findStrings>
     <replaceStrings>
       <replace>_encodeData</replace>
@@ -149,26 +139,27 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/setup.py" />
-        <option value="$PROJECT_DIR$/classification/__init__.py" />
         <option value="$PROJECT_DIR$/features/__init__.py" />
         <option value="$PROJECT_DIR$/datasets/__init__.py" />
         <option value="$PROJECT_DIR$/datasets/_base.py" />
         <option value="$PROJECT_DIR$/__init__.py" />
-        <option value="$PROJECT_DIR$/grid/__init__.py" />
         <option value="$PROJECT_DIR$/train.py" />
         <option value="$PROJECT_DIR$/features/feature_utils.py" />
-        <option value="$PROJECT_DIR$/grid/_base.py" />
-        <option value="$PROJECT_DIR$/classification/autoClassify.py" />
-        <option value="$PROJECT_DIR$/test_stub.py" />
         <option value="$PROJECT_DIR$/../setup.py" />
+        <option value="$PROJECT_DIR$/grid/__init__.py" />
+        <option value="$PROJECT_DIR$/classification/__init__.py" />
+        <option value="$PROJECT_DIR$/classification/autoClassify.py" />
+        <option value="$PROJECT_DIR$/grid/_base.py" />
+        <option value="$PROJECT_DIR$/classification/_base.py" />
+        <option value="$PROJECT_DIR$/test_stub.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="2612" />
-    <option name="y" value="227" />
-    <option name="width" value="1037" />
-    <option name="height" value="824" />
+    <option name="x" value="1911" />
+    <option name="y" value="-9" />
+    <option name="width" value="1938" />
+    <option name="height" value="1048" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -181,6 +172,11 @@
             <path>
               <item name="autopredict" type="b2602c69:ProjectViewProjectNode" />
               <item name="autopredict" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="autopredict" type="b2602c69:ProjectViewProjectNode" />
+              <item name="autopredict" type="462c0819:PsiDirectoryNode" />
+              <item name="grid" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -328,57 +324,128 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1913" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24983476" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24983476" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32909605" />
-      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Python Console" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Python Console" order="7" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.47033897" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997175" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Run" order="6" visible="true" weight="0.32909605" />
-      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
       <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.24983476" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="10" />
-      <window_info anchor="bottom" id="Python Console" order="0" />
-      <window_info anchor="bottom" id="Message" order="4" />
+      <window_info anchor="bottom" id="Version Control" order="3" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="6" visible="true" weight="0.32909605" />
+      <window_info anchor="bottom" id="Find" order="5" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
       <window_info anchor="bottom" id="Terminal" order="1" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
-      <window_info anchor="bottom" id="Version Control" order="3" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Find" order="5" />
+      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info id="Favorites" order="0" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="4" />
+      <window_info anchor="bottom" id="Python Console" order="0" />
     </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/Desktop/Box/ref_data/ref_data/credit/python37/uom_data_spec/Lib/site-packages/h2o/model/metrics_base.py">
+    <entry file="file://$PROJECT_DIR$/test_stub.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3">
+        <state relative-caret-position="17">
+          <caret line="1" column="9" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="9" />
           <folding>
-            <element signature="e#146#228#0" expanded="true" />
+            <element signature="e#0#19#0" expanded="true" />
           </folding>
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/Box/ref_data/ref_data/credit/python37/uom_data_spec/Lib/site-packages/sklearn/model_selection/_search.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19312">
+          <caret line="1136" column="50" selection-start-line="1136" selection-start-column="50" selection-end-line="1136" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classification/autoClassify.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" column="33" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="33" />
+          <folding>
+            <element signature="e#26#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/Box/ref_data/ref_data/credit/python37/uom_data_spec/Lib/site-packages/sklearn/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9673">
+          <caret line="569" column="46" selection-start-line="569" selection-start-column="25" selection-end-line="569" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/Box/ref_data/ref_data/credit/python37/uom_data_spec/Lib/site-packages/sklearn/preprocessing/_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8398">
+          <caret line="519" column="6" selection-start-line="519" selection-start-column="6" selection-end-line="519" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../setup.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="15" selection-start-line="21" selection-start-column="15" selection-end-line="21" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grid/_base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="47" selection-start-line="1" selection-start-column="47" selection-end-line="1" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/Box/ref_data/ref_data/credit/python37/uom_data_spec/Lib/site-packages/sklearn/tree/_classes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9690">
+          <caret line="600" column="13" selection-start-line="600" selection-start-column="4" selection-end-line="600" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/features/feature_utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="18" lean-forward="true" selection-start-column="18" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/Box/ref_data/ref_data/credit/python37/uom_data_spec/Lib/site-packages/sklearn/linear_model/_logistic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23987">
+          <caret line="1436" column="60" selection-start-line="1436" selection-start-column="59" selection-end-line="1436" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/Box/ref_data/ref_data/credit/python37/uom_data_spec/Lib/site-packages/h2o/model/metrics_base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3" />
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/Desktop/Box/ref_data/ref_data/credit/python37/uom_data_spec/Lib/site-packages/h2o/model/autoencoder.py">
@@ -388,16 +455,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/setup.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/setup.py" />
     <entry file="file://$USER_HOME$/Desktop/Box/ref_data/ref_data/credit/python37/uom_data_spec/Lib/site-packages/h2o/model/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="237">
           <caret line="17" column="51" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="51" />
-          <folding>
-            <element signature="e#0#44#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -412,9 +474,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="22" column="15" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="15" />
-          <folding>
-            <element signature="e#26#108#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -436,9 +495,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
           <caret line="132" column="15" selection-start-line="132" selection-start-column="8" selection-end-line="132" selection-end-column="15" />
-          <folding>
-            <element signature="e#391#409#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -456,9 +512,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" column="34" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="34" />
-          <folding>
-            <element signature="e#201#283#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -473,16 +526,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
           <caret line="27" column="6" lean-forward="true" selection-start-line="27" selection-start-column="6" selection-end-line="27" selection-end-column="6" />
-          <folding>
-            <element signature="e#337#372#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classification/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="26" lean-forward="true" selection-end-line="2" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -512,37 +555,10 @@
         <state relative-caret-position="-596" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/datasets/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/datasets/_base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="34" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Desktop/Box/ref_data/ref_data/credit/python37/uom_data_spec/Lib/site-packages/sklearn/datasets/_base.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="131">
           <caret line="298" column="34" selection-start-line="298" selection-start-column="26" selection-end-line="298" selection-end-column="34" />
-          <folding>
-            <element signature="e#251#260#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grid/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="20" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -560,82 +576,152 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Desktop/Box/ref_data/ref_data/credit/python37/uom_data_spec/Lib/site-packages/sklearn/tree/_classes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="600" column="13" selection-start-line="600" selection-start-column="4" selection-end-line="600" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/train.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/Box/ref_data/ref_data/credit/python37/uom_data_spec/Lib/site-packages/sklearn/linear_model/_logistic.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="1436" column="60" selection-start-line="1436" selection-start-column="59" selection-end-line="1436" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/train.py" />
     <entry file="file://$PROJECT_DIR$/features/feature_utils.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="18" lean-forward="true" selection-start-column="18" selection-end-column="18" />
+          <caret column="18" selection-start-column="18" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grid/_base.py">
+    <entry file="file://$PROJECT_DIR$/../setup.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="47" selection-start-line="1" selection-start-column="47" selection-end-line="1" selection-end-column="47" />
+        <state relative-caret-position="357">
+          <caret line="21" column="15" selection-start-line="21" selection-start-column="15" selection-end-line="21" selection-end-column="15" />
         </state>
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/Desktop/Box/ref_data/ref_data/credit/python37/uom_data_spec/Lib/site-packages/sklearn/preprocessing/_data.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1738">
+        <state relative-caret-position="221">
           <caret line="519" column="6" selection-start-line="519" selection-start-column="6" selection-end-line="519" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/Desktop/Box/ref_data/ref_data/credit/python37/uom_data_spec/Lib/site-packages/sklearn/base.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="642">
+        <state relative-caret-position="17">
           <caret line="569" column="46" selection-start-line="569" selection-start-column="25" selection-end-line="569" selection-end-column="46" />
         </state>
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/Desktop/Box/ref_data/ref_data/credit/python37/uom_data_spec/Lib/site-packages/sklearn/model_selection/_search.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="1136" column="50" selection-start-line="1136" selection-start-column="50" selection-end-line="1136" selection-end-column="50" />
+        <state relative-caret-position="4058">
+          <caret line="885" column="22" selection-start-line="885" selection-start-column="18" selection-end-line="885" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grid/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="62" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classification/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="50" selection-start-line="4" selection-start-column="50" selection-end-line="4" selection-end-column="50" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/Box/ref_data/ref_data/credit/python37/uom_data_spec/Lib/site-packages/sklearn/neighbors/_classification.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-378">
+          <caret line="146" column="68" selection-start-line="146" selection-start-column="62" selection-end-line="146" selection-end-column="68" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/classification/autoClassify.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="28" column="33" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="33" />
+        <state relative-caret-position="141">
+          <caret line="143" selection-start-line="143" selection-end-line="143" />
           <folding>
             <element signature="e#26#45#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/Desktop/Box/ref_data/ref_data/credit/python37/uom_data_spec/Lib/site-packages/sklearn/linear_model/_logistic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1117">
+          <caret line="1436" column="28" selection-start-line="1436" selection-start-column="28" selection-end-line="1436" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/Box/ref_data/ref_data/credit/python37/uom_data_spec/Lib/site-packages/sklearn/tree/_classes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="812" column="25" lean-forward="true" selection-start-line="812" selection-start-column="25" selection-end-line="812" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/Box/ref_data/ref_data/credit/python37/uom_data_spec/Lib/site-packages/sklearn/ensemble/_forest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1552">
+          <caret line="1171" column="13" selection-start-line="1171" selection-start-column="4" selection-end-line="1171" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classification/_base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#47#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/test_stub.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="61" column="8" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="32" />
+        <state relative-caret-position="160">
+          <caret line="47" column="5" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../setup.py">
+    <entry file="file://$USER_HOME$/Desktop/Box/ref_data/ref_data/credit/python37/uom_data_spec/Lib/site-packages/sklearn/naive_bayes.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="21" column="15" selection-start-line="21" selection-start-column="15" selection-end-line="21" selection-end-column="15" />
+        <state relative-caret-position="-63">
+          <caret line="179" column="8" selection-start-line="179" selection-start-column="8" selection-end-line="179" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/Box/ref_data/ref_data/credit/python37/uom_data_spec/Lib/site-packages/sklearn/ensemble/_gb.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1738">
+          <caret line="2066" column="26" selection-start-line="2066" selection-start-column="17" selection-end-line="2066" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grid/_base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="14" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datasets/_base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="34" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datasets/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
         </state>
       </provider>
     </entry>

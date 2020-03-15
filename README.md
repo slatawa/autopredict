@@ -1,6 +1,6 @@
 Python Library to Automate building of prediction models - classification and regression and feature selection/ranking.
 
-Project Description 
+Description 
 
 autopredict is a simple yet powerful library which can be used by Data Scientists to apply multiple prediction (regression,classification) data models
 to a data set. Just pass in the train set with the dependent variable and sit back as autopredict does all the work for you.

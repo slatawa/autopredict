@@ -8,10 +8,10 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.model_selection import GridSearchCV
 from sklearn.metrics import roc_auc_score
 from sklearn.metrics import f1_score
-from grid._base import gridDict
+from grid import getClassificationGridDict
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.preprocessing import StandardScaler
-
+from classification import _base
 
 
 class autoClassify:
@@ -26,7 +26,8 @@ class autoClassify:
 
     def __init__(self,cv=3,verbosity="warn",models=None,
                  encoder='label',scaler=None
-                 ,use_grid_tuning=False,score='roc_auc',random_state=None):
+                 ,useGridtuning=False,gridDict = None
+                 ,score='roc_auc',random_state=None):
         """
 
         :param cv:         cross validation sets
@@ -46,9 +47,19 @@ class autoClassify:
                            perform better with scaled features while few others like trees can handle
                            unscaled values,default value for this is None, supported values- 'minmax'
                            for sklearn's minmax sclaer ,'standard' - for sklearn's standard scaler
-        :param use_grid_tuning: set this to True if you want to use grid search over the
+        :param useGridtuning: set this to True if you want to use grid search over the
                                supported classifier, the grid is selected based on configuration
                                saved in ./grid/_bases.py file in Dictionary gridDict
+        :param gridDict: This variable is required if you use the Grid tuning option in autopredict
+                         by setting useGridtuning= True in such scenario autopredict has ready made ranges for paramter
+                         tweaking that it is going to test the model performance on , in case you want to over-ride those
+                         parameters you can pass values in this argument , sample
+                         gridDict={'LogisticRegression': {'penalty': ['l2'], 'C': [0.001, 0.1, 1, 10]}, 'DecisionTreeClassifier': {'max_depth': [4, 5, 6, 7, 8, 9, 10]}}
+                         if you want to see the default config used by autopredict,use below function in autopredict.grid
+                         grid.getClassificationGridDict() , this function will return the possible values
+                         you can use the output, tweak the values and pass it as input to autopredict. You can not add
+                         new keys in the dict as the keys present are the only ones supported, you could edit the values
+                         of the dict to change the grid tuning params
         :param score: scoring parameter to be used for grid search
         :param random_state: seed parameter
         """
@@ -58,11 +69,10 @@ class autoClassify:
 
         if models:
             self.models=models
-            self.use_grid_tuning = False
+            self.useGridtuning = False
         else:
-            self.models=[LogisticRegression(random_state=self.random_state)
-                     ,DecisionTreeClassifier(random_state=self.random_state)]
-            self.use_grid_tuning = use_grid_tuning
+            self.models=_base._getClassModelsMetadata(self.random_state)
+            self.useGridtuning = useGridtuning
 
         self._predict_df = pd.DataFrame(columns=['modelName','modelObject','modelParams'])
         self._encode_dict = {'label':LabelEncoder(),'hot':OneHotEncoder()}
@@ -98,7 +108,7 @@ class autoClassify:
 
     def _applyModel(self,model,X,y,params=None):
         key = str(model).split('(')[0]
-        model.fit(X,y,params)
+        model.fit(X,y)
         self._predict_df= self._predict_df.append({'modelName':key,
                                                    'modelObject':model,
                                                   'modelParams':model.get_params()},
@@ -109,6 +119,13 @@ class autoClassify:
 
     def train(self,X,y):
 
+        ## check for null values
+        assert X.isna().any().sum() == 0, 'Dataframe X passed as input has null values ' \
+                                                 'pleae run df.isna().any() to indetify null' \
+                                                 'columns and either drop or fill these null values' \
+                                                 'before passing to autopredict'
+        # print(X.isna().any())
+
         if self.scaler:
             if self.scaler not in self._scaler_dict.keys():
                 raise ValueError(f'Scaler key not defined, look at the scaler parameter '
@@ -118,9 +135,10 @@ class autoClassify:
         ## check if any data to be converted from str/object
         X = self._encodeData(X, self._encode_dict[self.encoder])
 
-        if self.use_grid_tuning:
+        if self.useGridtuning:
             for rec in self.models:
                 key = str(rec).split('(')[0]
+                gridDict= getClassificationGridDict()
                 if key not in gridDict.keys():
                     print(key)
                     raise ValueError(f' {key} is not supported by Gridsearch paramter dict, look at ./grid/_.base'
@@ -129,7 +147,8 @@ class autoClassify:
                 gsModel = GridSearchCV(estimator=rec
                                        ,param_grid=gridvalues
                                        ,scoring=self.score
-                                       ,cv=self.cv).fit(X, y)
+                                       ,cv=self.cv
+                                       ,n_jobs=-1).fit(X, y)
                 self._predict_df = self._predict_df.append({'modelName': key,
                                                             'modelObject': gsModel.best_estimator_,
                                                             'modelParams': gsModel.best_params_,
