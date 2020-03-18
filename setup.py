@@ -15,11 +15,13 @@ setuptools.setup(
 
     name='autopredict',
 
-    license="MIT",
+    license="Apache Software License",
 
     description='Autopredict is a package to automate Machine learning model selection/ feature selection tasks',
 
-    version='v1.0.3',
+    version='v1.0.5',
+
+    long_description_content_type='text/markdown',
 
     long_description=README,
 

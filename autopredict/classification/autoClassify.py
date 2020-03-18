@@ -11,10 +11,15 @@ from sklearn.metrics import f1_score
 from grid import getClassificationGridDict
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.preprocessing import StandardScaler
+from base import basePredict
 from classification import _base
+import logging
+import time
+import scorers
 
 
-class autoClassify:
+
+class autoClassify(basePredict):
     """
     Automate classification prediction
 
@@ -24,7 +29,8 @@ class autoClassify:
 
     """
 
-    def __init__(self,cv=3,verbosity="warn",models=None,
+
+    def __init__(self,cv=3,verbosity="INFO",models=None,
                  encoder='label',scaler=None
                  ,useGridtuning=False,gridDict = None
                  ,score='roc_auc',random_state=None):
@@ -34,8 +40,8 @@ class autoClassify:
         :param verbosity:  level of logging - 0,1,2
         :param models:     List of model objects for which you want to run the train data through
                            below is a sample input, by default this is null in which case train data
-                           ,could be run through all supported models with default parameters of autopredict
-                           if this argument is passed in use_grid_tuning would be over-riden to False
+                           ,could be run through all supported models with default parameters of autopredict.
+                           if this argument is passed in then use_grid_tuning would be over-riden to False
                            i.e - you can not grid search for parameter tuning
                            [LogisticRegression(random_state=100)
                            ,DecisionTreeClassifier(random_state=100,max_depth=3)]
@@ -63,150 +69,63 @@ class autoClassify:
         :param score: scoring parameter to be used for grid search
         :param random_state: seed parameter
         """
-        self.cv = cv
-        self.verbosity=verbosity
-        self.random_state = random_state
+        ## add checks here
+        if verbosity not in self._logSupport:
+            raise Exception('verbosity paramater can only have the values {_logSupport}')
+        logging.basicConfig(level=verbosity)
 
-        if models:
-            self.models=models
-            self.useGridtuning = False
-        else:
-            self.models=_base._getClassModelsMetadata(self.random_state)
-            self.useGridtuning = useGridtuning
+        self.multiClass = False
 
-        self._predict_df = pd.DataFrame(columns=['modelName','modelObject','modelParams'])
-        self._encode_dict = {'label':LabelEncoder(),'hot':OneHotEncoder()}
-        self._scaler_dict = {'standard':StandardScaler(),'minmax':MinMaxScaler()}
-        self.encoder=encoder
-        self.scaler=scaler
-        self.score = score
+        super().__init__(objective=self._classify, cv=cv, verbosity=verbosity, models=models,
+                         encoder=encoder, scaler=scaler
+                         ,useGridtuning=useGridtuning, gridDict=gridDict
+                         , score=score, random_state=random_state)
 
+    def fit(self, X, y):
+        startTime = time.time()
 
-    ## add checks here
+        if X.isna().any().sum() > 0:
+            logging.warning('Input DataFrame passed has null values - autopredict '
+                            'is going to replace the Nan with the most frequent occuring '
+                            'value in each column')
+        try:
+            for rec in X.columns:
+                X = X.fillna(X.mode().iloc[0])
+        except Exception as e:
+            raise Exception(f'Failed to replace NAN values in the dataframe {str(e)}')
 
-    def _scaleData(self,X,scaleObj):
-        for rec in X.columns:
-            if str(X[rec].dtype).startswith('int') or str(X[rec].dtype).startswith('float'):
-                X[rec] = scaleObj.fit_transform(X[rec].to_numpy().reshape(-1,1))
-        return X
-
-
-    def _encodeData(self,X,encodeObj):
-        for rec in X.columns:
-            if X[rec].dtype == 'object':
-                X[rec] = encodeObj.fit_transform(X[rec])
-        return X
-
-    def _score(self,X,y):
-        ### add scorers here
-        self._predict_df['score'] = self._predict_df['modelObject']. \
-            apply(lambda x: x.score(X,y))
-        self._predict_df['roc_auc_score'] = self._predict_df['modelObject'].\
-            apply(lambda x : roc_auc_score(y,x.predict_proba(X)[:,1]))
-        self._predict_df['f1_score'] = self._predict_df['modelObject']. \
-            apply(lambda x: f1_score(y,x.predict(X)))
-
-    def _applyModel(self,model,X,y,params=None):
-        key = str(model).split('(')[0]
-        model.fit(X,y)
-        self._predict_df= self._predict_df.append({'modelName':key,
-                                                   'modelObject':model,
-                                                  'modelParams':model.get_params()},
-                                                  ignore_index=True)
-
-    def getModelMetadata(self):
-        return self.models
-
-    def train(self,X,y):
-
-        ## check for null values
-        assert X.isna().any().sum() == 0, 'Dataframe X passed as input has null values ' \
-                                                 'pleae run df.isna().any() to indetify null' \
-                                                 'columns and either drop or fill these null values' \
-                                                 'before passing to autopredict'
-        # print(X.isna().any())
 
         if self.scaler:
             if self.scaler not in self._scaler_dict.keys():
                 raise ValueError(f'Scaler key not defined, look at the scaler parameter '
                                  f'that is being passed in {self.scaler}')
-            X = self._scaleData(X,self._scaler_dict[self.scaler])
+            X_scaled = self._scaleData(X, self._scaler_dict[self.scaler])
 
         ## check if any data to be converted from str/object
         X = self._encodeData(X, self._encode_dict[self.encoder])
+        if self.scaler:
+            X_scaled = self._encodeData(X_scaled, self._encode_dict[self.encoder])
 
-        if self.useGridtuning:
-            for rec in self.models:
-                key = str(rec).split('(')[0]
-                gridDict= getClassificationGridDict()
-                if key not in gridDict.keys():
-                    print(key)
-                    raise ValueError(f' {key} is not supported by Gridsearch paramter dict, look at ./grid/_.base'
-                          f'-> gridDict')
-                gridvalues = gridDict[key]
-                gsModel = GridSearchCV(estimator=rec
-                                       ,param_grid=gridvalues
-                                       ,scoring=self.score
-                                       ,cv=self.cv
-                                       ,n_jobs=-1).fit(X, y)
-                self._predict_df = self._predict_df.append({'modelName': key,
-                                                            'modelObject': gsModel.best_estimator_,
-                                                            'modelParams': gsModel.best_params_,
-                                                            'gridSearchScore':gsModel.best_score_},
-                                                           ignore_index=True)
-                self._score(X, y)
-        else:
-            ## split the data into train and test sets
-            X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=self.random_state)
+        ## check if binar classification
 
-            for rec in self.models:
-            ## Fit the data into the model
-                self._applyModel(rec,X_train,y_train)
-                self._score(X_test,y_test)
+        if len(y.value_counts()) > 2:
+            logging.warning('More then 2 target classes detected , scoring '
+                            'for grid search will be over-ridden to - ''Accuracy''')
+            self.score = 'accuracy'
+            self.multiClass = True
 
-    def getModelScores(self):
-        """
-        :return: return models trained by autoclassify along with respective stores
-        sample
-        autoClassify().getModelScores()
-        """
-        return self._predict_df
+        X_scaled = X_scaled if self.scaler else None
+        super().fit(X,X_scaled, y,self.multiClass)
 
-    def getModelObject(self,modelName):
-        """
-        this function is used
-        :param modelName:  name of the model whose object you want back, all possible options
-                        can be retrieved by using autoClassify().getModelScores()
-        :return: returns trained model object which was trained under autopredict's train function
-        sample call
-        autoClassify().getModelObject(modelName='LogisticRegression')
-        """
-        return self._predict_df.loc[self._predict_df['modelName']==modelName,'modelObject'].iloc[0]
-    
-    def getBestModel(self,score='score'):
-        """
-        :param score:  by default this is set to score method, scorers supported by
-        autoClassify can be passed here
-        :return:
-        sample call
-        autoClassify().getBestModel()
-        """
-        if score not in self._predict_df:
-            raise('Scorer not supported by autoClassify')
-        return self._predict_df.sort_values(by=score,ascending=False).loc[0,'modelObject']
 
-    def predict(self,testSet,model=None):
-        """
-        Returns preidct array for testSet passed as input
-        :param testSet: input on which you want model to predict output
-        :param model: model to be used to predict the ouput
-        :return: an array of prediction values
-        sample call
-        autoClassify.predict(X,model=tmp.getModelObject('DecisionTreeClassifier'))
-        """
-        if not model:
-            model = self.getBestModel()
-        return model.predict(testSet)
+        ## get scores
+        logging.info('Training of models complete')
+        logging.info(f'Total training time {round(time.time()-startTime,1)} seconds')
+        return self
+
+
+
+
 
 
 

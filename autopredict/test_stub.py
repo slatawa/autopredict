@@ -9,6 +9,9 @@ from sklearn.tree import DecisionTreeClassifier
 import grid
 import time
 
+
+
+
 if __name__ == '__main__':
     pd.set_option('display.max_columns',50000)
     pd.set_option('display.width', 500000)
@@ -45,8 +48,8 @@ if __name__ == '__main__':
     #print(grid.getClassificationGridDict())
     start = time.time()
     tmp =autoClassify(encoder='label',useGridtuning=True)
-    #tmp = autoClassify(encoder='label', useGridtuning=False)
-    tmp.train(X,y)
+    tmp = autoClassify(encoder='label', useGridtuning=False)
+    tmp.fit(X,y)
     print(tmp._predict_df)
     print(time.time()-start)
     #print(type(_.iloc[0,1]))

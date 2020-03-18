@@ -13,3 +13,10 @@ def _getClassModelsMetadata(seed):
             ,GaussianNB()
             ,RandomForestClassifier(random_state=seed,n_jobs=-1)
             ,GradientBoostingClassifier(random_state=seed)]
+
+def _getScaleModels():
+    ## list of models that would
+    ## do well on scaled data as seed
+    return ['LogisticRegression'
+            ,'GaussianNB'
+           ]
