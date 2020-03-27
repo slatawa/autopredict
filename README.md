@@ -25,7 +25,7 @@ by Sanchit Latawa & is protected by The Apache Licensev2.0.
 ### Sample Usage
 ```sh
 >> from autopredict.classification import autoClassify
->> model =autoClassify(encoder='label',scaler='minmax',use_grid_tuning=False)
+>> model =autoClassify(encoder='label',scaler='minmax',useGridtuning=False)
 >> model.train(X,y)
 >>print(model.getModelScores())  
 ```

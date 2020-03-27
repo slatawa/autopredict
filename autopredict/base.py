@@ -7,7 +7,7 @@ from classification import _base
 from grid import getClassificationGridDict
 from sklearn.model_selection import GridSearchCV
 from sklearn.model_selection import train_test_split
-import scorers
+from  autopredict import scorers
 import logging
 
 

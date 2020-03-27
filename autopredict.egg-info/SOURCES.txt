@@ -1,6 +1,8 @@
 README.md
 setup.py
 autopredict/__init__.py
+autopredict/base.py
+autopredict/sample_iris_classification.py
 autopredict/test_stub.py
 autopredict.egg-info/PKG-INFO
 autopredict.egg-info/SOURCES.txt
@@ -16,3 +18,5 @@ autopredict/features/__init__.py
 autopredict/features/feature_utils.py
 autopredict/grid/__init__.py
 autopredict/grid/_base.py
+autopredict/scorers/__init__.py
+autopredict/scorers/base.py

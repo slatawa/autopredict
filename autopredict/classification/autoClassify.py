@@ -1,4 +1,6 @@
 # -*- encoding: utf-8 -*-
+import sys
+sys.path.append("..")
 import pandas as pd
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
@@ -11,7 +13,7 @@ from sklearn.metrics import f1_score
 from grid import getClassificationGridDict
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.preprocessing import StandardScaler
-from base import basePredict
+import base
 from classification import _base
 import logging
 import time
@@ -19,7 +21,7 @@ import scorers
 
 
 
-class autoClassify(basePredict):
+class autoClassify(base.basePredict):
     """
     Automate classification prediction
 
@@ -106,7 +108,7 @@ class autoClassify(basePredict):
         if self.scaler:
             X_scaled = self._encodeData(X_scaled, self._encode_dict[self.encoder])
 
-        ## check if binar classification
+        ## check if binary classification
 
         if len(y.value_counts()) > 2:
             logging.warning('More then 2 target classes detected , scoring '
