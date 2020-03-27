@@ -1,5 +1,8 @@
 import pandas as pd
-from classification import autoClassify
+import os,sys,inspect
+import sys
+sys.path.append("..")
+from autopredict.classification import autoClassify
 from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import GridSearchCV
 from sklearn.linear_model import LogisticRegression
@@ -8,10 +11,6 @@ from datasets import loadiris
 from sklearn.tree import DecisionTreeClassifier
 import grid
 import time
-import os,sys,inspect
-currentdir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
-parentdir = os.path.dirname(currentdir)
-sys.path.insert(0,parentdir) 
 
 
 
