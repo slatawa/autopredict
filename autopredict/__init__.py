@@ -8,6 +8,7 @@
 
 import os
 
+
 here = os.path.abspath(os.path.dirname(__file__))
 try:
     with open(os.path.join(here, 'buildinfo.txt'), encoding='utf-8') as f:
@@ -21,7 +22,7 @@ try:
 except:
     __version__ = "0.0.local"
 
-__all__ = ()
+__all__ = ('grid','classification','features','scorers','base')
 
 
 

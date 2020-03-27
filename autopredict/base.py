@@ -3,11 +3,11 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.preprocessing import LabelEncoder
 import pandas as pd
-from classification import _base
-from grid import getClassificationGridDict
+from .classification import _base
+from .grid import getClassificationGridDict
 from sklearn.model_selection import GridSearchCV
 from sklearn.model_selection import train_test_split
-import scorers
+from  .scorers import classifyScore,regressScore
 import logging
 
 
@@ -58,10 +58,10 @@ class basePredict:
     def _score(self,X,y,X_scaled_test=None,y_scaled_test=None,scalerData=False):
         ### add scorers here
         if self.objective == self._classify:
-            self._predict_df = scorers.classifyScore(self._predict_df,X,y,X_scaled_test,y_scaled_test
+            self._predict_df = classifyScore(self._predict_df,X,y,X_scaled_test,y_scaled_test
                                                      ,self.multiClass,scalerData)
         else:
-            self._predict_df = scorers.regressScore(self._predict_df, X, y,X_scaled_test,y_scaled_test)
+            self._predict_df = regressScore(self._predict_df, X, y,X_scaled_test,y_scaled_test)
 
     def _applyModel(self,model,X,y,params=None):
         key = str(model).split('(')[0]
