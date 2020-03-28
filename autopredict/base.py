@@ -3,11 +3,11 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.preprocessing import LabelEncoder
 import pandas as pd
-from .classification import _base
-from .grid import getClassificationGridDict
+from classification import _base
+from grid import getClassificationGridDict
 from sklearn.model_selection import GridSearchCV
 from sklearn.model_selection import train_test_split
-from  .scorers import classifyScore,regressScore
+from  scorers import classifyScore,regressScore
 import logging
 
 
@@ -141,7 +141,7 @@ class basePredict:
         """
         return self._predict_df.loc[self._predict_df['modelName'] == modelName, 'modelObject'].iloc[0]
 
-    def getBestModel(self, score='score'):
+    def getBestModel(self, score='accuracy_score'):
         """
         :param score:  by default this is set to score method, scorers supported by
         autoClassify can be passed here
@@ -150,7 +150,7 @@ class basePredict:
         autoClassify().getBestModel()
         """
         if score not in self._predict_df:
-            raise ('Scorer not supported by autoClassify')
+            raise Exception('Scorer not supported by autoClassify')
         return self._predict_df.sort_values(by=score, ascending=False).loc[0, 'modelObject']
 
     def predict(self, testSet, model=None):

@@ -10,11 +10,11 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.model_selection import GridSearchCV
 from sklearn.metrics import roc_auc_score
 from sklearn.metrics import f1_score
-from ..grid import getClassificationGridDict
+from grid import getClassificationGridDict
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.preprocessing import StandardScaler
-from ..base import basePredict
-import autopredict.classification._base
+from base import basePredict
+import classification._base
 import logging
 import time
 

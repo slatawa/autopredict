@@ -2,8 +2,6 @@ README.md
 setup.py
 autopredict/__init__.py
 autopredict/base.py
-autopredict/sample_iris_classification.py
-autopredict/test_stub.py
 autopredict.egg-info/PKG-INFO
 autopredict.egg-info/SOURCES.txt
 autopredict.egg-info/dependency_links.txt
