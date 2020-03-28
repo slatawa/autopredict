@@ -9,6 +9,7 @@ Autopredict is a simple yet powerful library which can be used by Data Scientist
   - Automate Model Selection
   - Hyperparameter tuning 
   - Feature selection/ranking
+  - Feature Compression
 
 This software has been designed with much Joy,
 by Sanchit Latawa & is protected by The Apache Licensev2.0.
@@ -49,7 +50,7 @@ from -> */autopredict/tests/sample_iris_classification.py
 # Loading Libraries
 import pandas as pd
 from autopredict.classification import autoClassify
-from autopredict.features import rankFeatures
+from autopredict.features import rankFeatures,reduce_memory
 
 # Setting display options
 pd.set_option('display.max_columns',50000)
@@ -109,23 +110,30 @@ grid = {'LogisticRegression':{'penalty':['l2']
 # would be used
 model = autoClassify(scaler='standard',useGridtuning=True,gridDict = grid).fit(X,y)
 
-### Step 3 get the score board
+# Step 3 get the score board
 print(model.getModelScores())
 print(model._predict_df)
 
-## step 4 if you want to get a model object back to predict ouput
-## below gets the best model object based onb accuracy score 
-## you can over-ride the default scoring mechanism by using 
-## score paramter in the the getBestModel Function
+# step 4 if you want to get a model object back to predict ouput
+# below gets the best model object based onb accuracy score 
+# you can over-ride the default scoring mechanism by using 
+# score paramter in the the getBestModel Function
 model_obj = model.getBestModel()
 
 # Step 4.1 In case you want to select any other model 
-## the model Name is derived from the output 
-## you get when you print print(model.getModelScores())
+# the model Name is derived from the output 
+# you get when you print print(model.getModelScores())
 model_obj = model.getModelObject('DecisionTreeClassifier')
 
-## Step 5 To predict using the model object use the below statement
+# Step 5 To predict using the model object use the below statement
 y_predict = model_obj.predict(validTestData)
+
+# Other Misc features
+
+# 1 If you want to compress memory usage of your datframe use the
+# reduce_memory utilty this will compress your feature set and display
+# the compress percentage 
+df = reduce_memory(df)
 
 ```
 

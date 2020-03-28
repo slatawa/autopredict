@@ -4,7 +4,7 @@ from sklearn.metrics import accuracy_score
 from sklearn.metrics import recall_score
 from sklearn.metrics import precision_score
 from sklearn.metrics import confusion_matrix
-from classification import _base
+from ..classification import _base
 
 classifyScorers = [roc_auc_score,accuracy_score,f1_score,recall_score,precision_score,confusion_matrix]
 regressScores=[]

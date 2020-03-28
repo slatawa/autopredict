@@ -3,11 +3,11 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.preprocessing import LabelEncoder
 import pandas as pd
-from classification import _base
-from grid import getClassificationGridDict
+from .classification import _base
+from .grid import getClassificationGridDict
 from sklearn.model_selection import GridSearchCV
 from sklearn.model_selection import train_test_split
-from  scorers import classifyScore,regressScore
+from  .scorers import classifyScore,regressScore
 import logging
 
 
