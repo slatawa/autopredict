@@ -19,7 +19,7 @@ setuptools.setup(
 
     description='Autopredict is a package to automate Machine learning model selection/ feature selection tasks',
 
-    version='v1.0.8',
+    version='v1.0.9',
 
     long_description_content_type='text/markdown',
 

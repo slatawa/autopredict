@@ -18,6 +18,8 @@ autopredict/grid/__init__.py
 autopredict/grid/_base.py
 autopredict/scorers/__init__.py
 autopredict/scorers/base.py
+autopredict/stacking/__init__.py
+autopredict/stacking/baseClassify.py
 autopredict/tests/__init__.py
 autopredict/tests/rankFeatureSample.py
 autopredict/tests/sample_iris_classification.py

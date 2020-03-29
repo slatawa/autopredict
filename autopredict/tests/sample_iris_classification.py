@@ -7,9 +7,9 @@ from autopredict.features import rankFeatures
 pd.set_option('display.max_columns',50000)
 pd.set_option('display.width', 500000)
 
-
+#print(os.listdir())
 # load the data into a dataframe
-df = pd.read_csv('./tests/iris.csv')
+df = pd.read_csv('iris.csv')
 
 # set target and feature values
 

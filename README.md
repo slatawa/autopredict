@@ -10,6 +10,7 @@ Autopredict is a simple yet powerful library which can be used by Data Scientist
   - Hyperparameter tuning 
   - Feature selection/ranking
   - Feature Compression
+  - Stacked Ensemble Models
 
 This software has been designed with much Joy,
 by Sanchit Latawa & is protected by The Apache Licensev2.0.
@@ -134,6 +135,46 @@ y_predict = model_obj.predict(validTestData)
 # reduce_memory utilty this will compress your feature set and display
 # the compress percentage 
 df = reduce_memory(df)
+
+# 2 Using stacked Ensemble models is only supported for
+# binary classification for now below is sample usage
+# where lgb and catboost are being used as base models
+# and then the output is consume by LR model to give final ouput
+
+from lightgbm import LGBMClassifier
+from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import StratifiedKFold
+from sklearn.model_selection import cross_val_score
+from autopredict.stacking import stackClassify
+from catboost import CatBoostClassifier
+
+# LightGBM params
+lgb_params = {}
+lgb_params['learning_rate'] = 0.02
+lgb_params['n_estimators'] = 650
+lgb_params['max_bin'] = 10
+lgb_params['subsample'] = 0.8
+lgb_params['subsample_freq'] = 10
+lgb_params['colsample_bytree'] = 0.8
+lgb_params['min_child_samples'] = 500
+lgb_params['seed'] = 99
+lgmodel = LGBMClassifier(**lgb_params)
+
+cat_params = {}
+cat_params['iterations'] = 900
+cat_params['depth'] = 8
+cat_params['rsm'] = 0.95
+cat_params['learning_rate'] = 0.03
+cat_params['l2_leaf_reg'] = 3.5
+cat_params['border_count'] = 8
+catmodel = CatBoostClassifier(**cat_params)
+
+logmodel = LogisticRegression()
+tmp = stackClassify(splits=2,stackerModel=logmodel ,
+              models= [lgmodel,catmodel],score='roc_auc',seed=100)
+
+y_pred_prob = tmp.fit_predict(X=train,y=target_train,test=test)
+# y_pred_prob has the predict probability for True class
 
 ```
 
